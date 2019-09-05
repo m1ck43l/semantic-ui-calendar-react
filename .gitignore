@@ -23,7 +23,6 @@ package-lock.json
 nbproject/private/
 build/
 nbbuild/
-dist/
 nbdist/
 .nb-gradle/
 

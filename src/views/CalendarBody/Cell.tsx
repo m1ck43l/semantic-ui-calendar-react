@@ -47,6 +47,10 @@ interface CellProps {
   marked?: boolean;
   /** Color of the mark. */
   markColor?: any;
+  /** Is cell marked. */
+  markedValidated?: boolean;
+  /** Color of the mark. */
+  markValidatedColor?: any;
 }
 
 class Cell extends React.Component<CellProps, any> {
@@ -60,6 +64,8 @@ class Cell extends React.Component<CellProps, any> {
       hovered,
       marked,
       markColor,
+      markedValidated,
+      markValidatedColor,
       ...rest
     } = this.props;
 
@@ -74,8 +80,8 @@ class Cell extends React.Component<CellProps, any> {
         style={cellStyle}
         onMouseOver={this.onCellHover}
         onClick={this.onCellClick}>
-        { (marked && !rest.disabled) ? <Label circular color={markColor} key={content}>{content}</Label>
-          : <span className = 'suicr-content-item'>{content}</span> }
+        { (marked) ? <Label circular color={markColor} key={content}>{content}</Label>
+          : ((markedValidated) ? <Label circular color={markValidatedColor} key={content}>{content}</Label> : <span className = 'suicr-content-item'>{content}</span>) }
       </Table.Cell>
     );
   }
