@@ -215,6 +215,8 @@ class DayPicker
 
       return { date: nextDate };
     }, callback);
+
+    this.props.onChange(e, data);
   }
 
   protected switchToPrevPage = (e: React.SyntheticEvent<HTMLElement>,
@@ -226,6 +228,8 @@ class DayPicker
 
       return { date: prevDate };
     }, callback);
+
+    this.props.onChange(e, data);
   }
 }
 

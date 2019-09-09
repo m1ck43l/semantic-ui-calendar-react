@@ -78,6 +78,7 @@ var DayPicker = /** @class */ (function (_super) {
                 nextDate.add(1, 'month');
                 return { date: nextDate };
             }, callback);
+            _this.props.onChange(e, data);
         };
         _this.switchToPrevPage = function (e, data, callback) {
             _this.setState(function (_a) {
@@ -86,6 +87,7 @@ var DayPicker = /** @class */ (function (_super) {
                 prevDate.subtract(1, 'month');
                 return { date: prevDate };
             }, callback);
+            _this.props.onChange(e, data);
         };
         _this.PAGE_WIDTH = PAGE_WIDTH;
         return _this;
