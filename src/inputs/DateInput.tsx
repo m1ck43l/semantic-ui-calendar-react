@@ -6,6 +6,7 @@ import * as React from 'react';
 
 import {
   BasePickerOnChangeData,
+  BasePickerOnViewChangeData
 } from '../pickers/BasePicker';
 import DayPicker from '../pickers/dayPicker/DayPicker';
 import MonthPicker from '../pickers/monthPicker/MonthPicker';
@@ -218,6 +219,7 @@ class DateInput extends BaseInput<DateInputProps, DateInputState> {
       tabIndex,
       pickerWidth,
       pickerStyle,
+      onViewChange: this.handleViewChange,
       onChange: this.handleSelect,
       onHeaderClick: this.switchToPrevMode,
       initializeWith: buildValue(this.parseInternalValue(), initialDate, localization, dateFormat),
@@ -275,6 +277,10 @@ class DateInput extends BaseInput<DateInputProps, DateInputState> {
     if (!this.props.preserveViewMode) {
       this.setState({ mode: this.props.startMode });
     }
+  }
+
+  private handleViewChange = (e, { value }: BasePickerOnViewChangeData) => {
+    invoke(this.props, 'onViewChange', e, { ...this.props, value: value });
   }
 
   private handleSelect = (e, { value }: BasePickerOnChangeData) => {

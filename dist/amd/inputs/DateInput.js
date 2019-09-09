@@ -100,6 +100,7 @@ define(["require", "exports", "lodash/isNil", "lodash/invoke", "moment", "prop-t
                     tabIndex: tabIndex,
                     pickerWidth: pickerWidth,
                     pickerStyle: pickerStyle,
+                    onViewChange: _this.handleViewChange,
                     onChange: _this.handleSelect,
                     onHeaderClick: _this.switchToPrevMode,
                     initializeWith: parse_1.buildValue(_this.parseInternalValue(), initialDate, localization, dateFormat),
@@ -142,6 +143,10 @@ define(["require", "exports", "lodash/isNil", "lodash/invoke", "moment", "prop-t
                 if (!_this.props.preserveViewMode) {
                     _this.setState({ mode: _this.props.startMode });
                 }
+            };
+            _this.handleViewChange = function (e, _a) {
+                var value = _a.value;
+                invoke_1.default(_this.props, 'onViewChange', e, __assign({}, _this.props, { value: value }));
             };
             _this.handleSelect = function (e, _a) {
                 var value = _a.value;

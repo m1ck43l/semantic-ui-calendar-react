@@ -35,9 +35,16 @@ export interface BasePickerOnChangeData {
   };
 }
 
+export interface BasePickerOnViewChangeData {
+  [key: string]: any;
+  value: Moment;
+}
+
+
 export interface BasePickerProps {
   /** Called after day is selected. */
   onChange: (e: React.SyntheticEvent<HTMLElement>, data: BasePickerOnChangeData) => void;
+  onViewChange?: (e: React.SyntheticEvent<HTMLElement>, data: BasePickerOnViewChangeData) => void;
   /** Currently selected date. */
   value?: Moment;
   /** A value for initializing day picker's state. */

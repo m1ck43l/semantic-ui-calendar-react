@@ -69,6 +69,7 @@ declare class DateInput extends BaseInput<DateInputProps, DateInputState> {
     private switchToPrevModeUndelayed;
     private switchToPrevMode;
     private onFocus;
+    private handleViewChange;
     private handleSelect;
     /** Keeps internal state in sync with input field value. */
     private onInputValueChange;

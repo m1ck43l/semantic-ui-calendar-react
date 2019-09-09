@@ -86,18 +86,22 @@ define(["require", "exports", "lodash/filter", "lodash/range", "lodash/includes"
                     var date = _a.date;
                     var nextDate = date.clone();
                     nextDate.add(1, 'month');
+                    _this.props.onViewChange(e, {
+                        value: nextDate
+                    });
                     return { date: nextDate };
                 }, callback);
-                _this.props.onChange(e, data);
             };
             _this.switchToPrevPage = function (e, data, callback) {
                 _this.setState(function (_a) {
                     var date = _a.date;
                     var prevDate = date.clone();
                     prevDate.subtract(1, 'month');
+                    _this.props.onViewChange(e, {
+                        value: prevDate
+                    });
                     return { date: prevDate };
                 }, callback);
-                _this.props.onChange(e, data);
             };
             _this.PAGE_WIDTH = PAGE_WIDTH;
             return _this;

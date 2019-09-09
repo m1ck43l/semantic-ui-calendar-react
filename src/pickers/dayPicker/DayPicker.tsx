@@ -213,10 +213,12 @@ class DayPicker
       const nextDate = date.clone();
       nextDate.add(1, 'month');
 
+      this.props.onViewChange(e, {
+        value: nextDate
+      });
+
       return { date: nextDate };
     }, callback);
-
-    this.props.onChange(e, data);
   }
 
   protected switchToPrevPage = (e: React.SyntheticEvent<HTMLElement>,
@@ -226,10 +228,12 @@ class DayPicker
       const prevDate = date.clone();
       prevDate.subtract(1, 'month');
 
+      this.props.onViewChange(e, {
+        value: prevDate
+      });
+
       return { date: prevDate };
     }, callback);
-
-    this.props.onChange(e, data);
   }
 }
 
