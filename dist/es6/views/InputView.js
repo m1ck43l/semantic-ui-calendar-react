@@ -56,7 +56,7 @@ var FormInputWithRef = /** @class */ (function (_super) {
                 ClearIcon
                 :
                     React.createElement(Icon, { name: icon }),
-            React.createElement("input", { ref: innerRef, value: value })));
+            React.createElement("input", { ref: innerRef, value: value, autoComplete: "off" })));
     };
     return FormInputWithRef;
 }(React.Component));

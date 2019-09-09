@@ -68,7 +68,7 @@ define(["require", "exports", "lodash/isString", "lodash/invoke", "react", "sema
                     ClearIcon
                     :
                         React.createElement(semantic_ui_react_1.Icon, { name: icon }),
-                React.createElement("input", { ref: innerRef, value: value })));
+                React.createElement("input", { ref: innerRef, value: value, autoComplete: "off" })));
         };
         return FormInputWithRef;
     }(React.Component));
