@@ -57,6 +57,7 @@ declare class DateTimeInput extends BaseInput<DateTimeInputProps, DateTimeInputS
         initialDate: PropTypes.Requireable<string | {}>;
         value: PropTypes.Validator<string>;
         onChange: PropTypes.Validator<(...args: any[]) => any>;
+        onViewChange: PropTypes.Requireable<(...args: any[]) => any>;
         closable: PropTypes.Requireable<boolean>;
         inline: PropTypes.Requireable<boolean>;
         icon: PropTypes.Requireable<string | boolean>;

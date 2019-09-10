@@ -26,6 +26,7 @@ declare class TimeInput extends BaseInput<TimeInputProps, TimeInputState> {
         preserveViewMode: import("prop-types").Requireable<boolean>;
         value: import("prop-types").Validator<string>;
         onChange: import("prop-types").Validator<(...args: any[]) => any>;
+        onViewChange: import("prop-types").Requireable<(...args: any[]) => any>;
         closable: import("prop-types").Requireable<boolean>;
         inline: import("prop-types").Requireable<boolean>;
         icon: import("prop-types").Requireable<string | boolean>;

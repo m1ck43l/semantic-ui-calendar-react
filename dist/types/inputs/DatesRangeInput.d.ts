@@ -25,6 +25,7 @@ declare class DatesRangeInput extends BaseInput<DatesRangeInputProps, BaseInputS
         initialDate: import("prop-types").Requireable<string | {}>;
         value: import("prop-types").Validator<string>;
         onChange: import("prop-types").Validator<(...args: any[]) => any>;
+        onViewChange: import("prop-types").Requireable<(...args: any[]) => any>;
         closable: import("prop-types").Requireable<boolean>;
         inline: import("prop-types").Requireable<boolean>;
         icon: import("prop-types").Requireable<string | boolean>;

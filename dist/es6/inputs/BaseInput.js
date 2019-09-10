@@ -21,6 +21,8 @@ export var BaseInputPropTypes = {
     value: PropTypes.string.isRequired,
     /** Called on selected value change. */
     onChange: PropTypes.func.isRequired,
+    /** Called on selected calendar view change. */
+    onViewChange: PropTypes.func,
     /** If true, popup closes after selecting a value. */
     closable: PropTypes.bool,
     /** An input can be formatted to appear inline in other content. */
@@ -78,6 +80,7 @@ export var MarkedValuesPropTypes = {
     marked: PropTypes.oneOfType([
         PropTypes.arrayOf(CustomPropTypes.momentObj),
         PropTypes.arrayOf(CustomPropTypes.dateObject),
+        PropTypes.arrayOf(PropTypes.string)
     ]),
     /** String specifying the mark color (Optional). */
     markColor: PropTypes.string,

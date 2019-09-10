@@ -19,6 +19,8 @@ export interface BaseInputProps {
   value: string;
   /** Called on selected value change. */
   onChange: (e: React.SyntheticEvent<HTMLElement>, data: any) => void;
+  /** Called on selected calendar view change. */
+  onViewChange: (e: React.SyntheticEvent<HTMLElement>, data: any) => void;
   /** If true, popup closes after selecting a value. */
   closable?: boolean;
   /** An input can be formatted to appear inline in other content. */
@@ -133,7 +135,7 @@ export const BaseInputPropTypes = {
 
 export interface MarkedValuesProps {
   /** Array of marked dates. */
-  marked?: Moment[] | Date[] | String[];
+  marked?: Moment[] | Date[] | string[];
   /** String specifying the mark color (Optional). */
   markColor?: SemanticCOLORS;
 }
