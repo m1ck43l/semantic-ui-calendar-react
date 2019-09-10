@@ -76,6 +76,8 @@ export const BaseInputPropTypes = {
   value: PropTypes.string.isRequired,
   /** Called on selected value change. */
   onChange: PropTypes.func.isRequired,
+  /** Called on selected calendar view change. */
+  onViewChange: PropTypes.func,
   /** If true, popup closes after selecting a value. */
   closable: PropTypes.bool,
   /** An input can be formatted to appear inline in other content. */
@@ -131,7 +133,7 @@ export const BaseInputPropTypes = {
 
 export interface MarkedValuesProps {
   /** Array of marked dates. */
-  marked?: Moment[] | Date[];
+  marked?: Moment[] | Date[] | String[];
   /** String specifying the mark color (Optional). */
   markColor?: SemanticCOLORS;
 }
@@ -141,6 +143,7 @@ export const MarkedValuesPropTypes = {
   marked: PropTypes.oneOfType([
     PropTypes.arrayOf(CustomPropTypes.momentObj),
     PropTypes.arrayOf(CustomPropTypes.dateObject),
+    PropTypes.arrayOf(PropTypes.string)
   ]),
   /** String specifying the mark color (Optional). */
   markColor: PropTypes.string,
